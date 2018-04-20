@@ -10,6 +10,12 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <div id="richard" class="jumbotron" style="background-color: #ff9d00 !important; color: aqua; display:none">
+            <h1 style="text-align: center;">TERN ON DE VOLOOM</h1>
+        </div>
+        <audio id = "audio" controls="controls" loop style="display: none;">
+            <source src="somethingCool.mp3" type="audio/mpeg">
+        </audio>
         <nav class="navbar navbar-default">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -30,5 +36,37 @@
         <div>
             <img src="thumbsUp.png" style="display: block; margin-left: auto; margin-right: auto;">
         </div>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyAjgdd8Bc-yxC4Ors8t76ZYXsavQABh5I4",
+                authDomain: "rick-roller.firebaseapp.com",
+                databaseURL: "https://rick-roller.firebaseio.com",
+                projectId: "rick-roller",
+                storageBucket: "",
+                messagingSenderId: "288023573199"
+              };
+              firebase.initializeApp(config);
+
+              var loop = setInterval(alive,100);
+
+              function alive(){
+                  firebase.database().ref("Eport/").update({
+                      testval: (Math.random()*10000)
+                });
+            }
+            var audio = document.getElementById("audio");
+            var temp;
+            firebase.database().ref("/Kport").on("value", function(snap){
+                console.log(temp+" "+snap.child("testval").val());
+                if(temp != null && temp!=snap.child("testval").val()){
+                console.log("PLAY RICKROLL");
+                    audio.play();
+                    $("#richard").slideDown();
+                }
+                temp =snap.child("testval").val();
+            });
+        </script>
     </body>
 </html>

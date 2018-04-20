@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Code</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">My Portfolio</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="portfolioCode.html">Code</a></li>
+              <li><a href="#">Building</a></li>
+              <li><a href="#">Miscellaneous</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class = "jumbotron text-center">
+            <h2 class="heading">Code</h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <h2 style="text-align: center;">General Programming</h2>
+                <p>I was apart of writing the code for competition. I wrote the operator control code and helped with the timed-auton code.</p>
+            </div>
+            <div class="col-sm-4">
+                <h2 style="text-align: center;">Auton Recorder</h2>
+                <p>I worked on an autonomous recorder. The auton recorder would record the controller inputs for every millisecond as we moved the robot for up to 15 seconds into a text file. Then, to replay the recorded movements, the auton replayer can be called to read each input for that millisecond every millisecond into a char array. The values in this array would then be turned into ints and used in our operator control functions to replay the movements of the robot.</p>
+            </div>
+            <div class="col-sm-4">
+                <h2 style="text-align: center;">Music</h2>
+                <p>For community events, I used the vex speaker functions to code music onto our robot. This was useful for events such as the Greenbrook Technology Night and the Monroe Public Library Maker Faire, where we let kids play with our robot.</p>
+            </div>
+        </div>
+    </body>
+</html>
